@@ -1,0 +1,23 @@
+name: bank_app
+version: 0.1.0
+
+authors:
+  - Evtimiy Mihaylov <evo@vaupe.com>
+
+targets:
+  bank_app:
+    main: src/bank_app.cr
+
+crystal: 0.35.1
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+    commit: a8c0f09b858162bd13c96663febef5527b322a32
+  jwt:
+    github: crystal-community/jwt
+    commit: caa24ec76dffa32448656deb06d9ba6f26bacf77
+  validations:
+    github: vladfaust/validations.cr
+    version: ~> 0.2.0
+license: MIT

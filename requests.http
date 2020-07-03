@@ -1,0 +1,54 @@
+POST http://0.0.0.0:3000/api/v1/login
+Content-Type: application/json
+
+{
+  "username" : "mark",
+  "password" : "mark"
+}
+
+###
+
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY2IyMTljN2ItOTdiOC00NmVlLTk3ZGMtMjUzNTk3ZTk4NjljIiwiZXhwIjoxNTkzNzY1NzIyfQ.NOmvs0tACV27Q8wGd24q4U9aPtXdBT8rr0Iva42onJg
+
+
+GET http://0.0.0.0:3000/api/v1/transactions
+Content-Type: application/json
+token: {{token}}
+
+###
+http://0.0.0.0:3000/api/v1/transactions?search=1
+Content-Type: application/json
+token: {{token}}
+
+###
+http://0.0.0.0:3000/api/v1/transactions/08ceba3b-aa2b-4dcb-ade9-1cf619bfc377
+Content-Type: application/json
+token: {{token}}
+
+###
+
+http://0.0.0.0:3000/api/v1/transactions?sort=amount&direction=ASC&search=Test
+Content-Type: application/json
+token: {{token}}
+
+###
+
+POST http://0.0.0.0:3000/api/v1/transactions
+Content-Type: application/json
+token: {{token}}
+
+{
+  "amount" : 50.99,
+  "to_user": "d83063c8-ee2d-49ac-878d-d38c840a46fb",
+  "from_user": "8a99ff02-c081-4b1c-bca2-2e276d75de63"
+}
+
+###
+
+PUT http://0.0.0.0:3000/api/v1/transactions/d5b95cea-17fa-4e10-aa90-1b1008124911
+Content-Type: application/json
+token: {{token}}
+
+{
+  "status" : 1
+}
