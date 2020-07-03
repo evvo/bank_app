@@ -14,7 +14,7 @@ module BankApp
       env.response.content_type = "application/json"
       env.response.status_code = status_code
       env.response.headers["Access-Control-Allow-Origin"] = "*"
-      
+
       json_response = {"success" => true, "data" => response}.to_json
       env.response.print json_response
       env.response.close

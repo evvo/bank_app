@@ -14,10 +14,6 @@ module BankApp
       @amount = (amount * 100).to_i64
     end
 
-    # def amount
-    #   @amount / 100
-    # end
-
     validate status, in: {Status::PENDING, Status::PAID}, presence: true
     validate amount, gte: 1, presence: true
     validate date, presence: true

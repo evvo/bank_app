@@ -17,9 +17,9 @@ module AuthController
       next
     end
 
-    payload = {"user_id" => user.id, "exp" => BankApp::TOKEN_EXPIRATION_TIMEOUT}
+    payload = {"user_id" => user.id, "exp" => Time.utc.to_unix + BankApp::TOKEN_EXPIRATION_TIMEOUT}
     token = JWT.encode(payload, BankApp::SECRET_KEY, JWT::Algorithm::HS256)
 
-    BankApp::Response.success(env, {"token" => token})
+    BankApp::Response.success(env, {"token" => token, "user_id" => user.id})
   end
 end

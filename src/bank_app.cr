@@ -10,7 +10,7 @@ module BankApp
   # Secret key for JWT
   SECRET_KEY = "SecretKey"
   # JWT expiration timeout
-  TOKEN_EXPIRATION_TIMEOUT = Time.utc.to_unix + (5 * 60)
+  TOKEN_EXPIRATION_TIMEOUT           = (5 * 60)
   TOGGLE_AUTH_USER_TRANSACTIONS_ONLY = false
 
   Kemal.config.env = "production"
@@ -32,7 +32,7 @@ module BankApp
   include AuthController
   include TransactionController
   include UserController
-  
+
   # Seed Memory Storage
   Initializer.run
 

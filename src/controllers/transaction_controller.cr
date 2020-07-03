@@ -44,7 +44,7 @@ module TransactionController
   post "/api/v1/transactions" do |env|
     current_user_id = BankApp::UserService.get_current_user_id(env)
     begin
-      from_user = env.params.json["to_user"].as(String)
+      from_user = env.params.json["from_user"].as(String)
       to_user = env.params.json["to_user"].as(String)
       amount = env.params.json["amount"].as(String).to_f64
     rescue
