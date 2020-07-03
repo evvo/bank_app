@@ -1,6 +1,6 @@
 # bank_app
 
-Simple back-end for bank-like API that uses memory for storing the data. Supports log-in, fetching/adding transactions, sorting and filtering.
+Example back-end API for bank-like app that uses memory for storing the data. Supports log-in, fetching/adding transactions, sorting and filtering.
 
 ## Installation
 
