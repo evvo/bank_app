@@ -8,7 +8,7 @@ Content-Type: application/json
 
 ###
 
-@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY2IyMTljN2ItOTdiOC00NmVlLTk3ZGMtMjUzNTk3ZTk4NjljIiwiZXhwIjoxNTkzNzY1NzIyfQ.NOmvs0tACV27Q8wGd24q4U9aPtXdBT8rr0Iva42onJg
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMmVmYTVhNzYtNzNhNy00YWY5LWFhNzAtZjg1YzgxYjVhODkyIiwiZXhwIjoxNTk0MTEyOTAzfQ.z6TMxl2mqvjg44MTPwE1ttzhmKGghF5IF_amNIUCfmA
 
 
 GET http://0.0.0.0:3000/api/v1/transactions
@@ -16,7 +16,7 @@ Content-Type: application/json
 token: {{token}}
 
 ###
-http://0.0.0.0:3000/api/v1/transactions?search=1
+http://0.0.0.0:3000/api/v1/transactions?search=Mark
 Content-Type: application/json
 token: {{token}}
 
@@ -38,7 +38,7 @@ Content-Type: application/json
 token: {{token}}
 
 {
-  "amount" : 50.99,
+  "amount" : "50.99",
   "to_user": "d83063c8-ee2d-49ac-878d-d38c840a46fb",
   "from_user": "8a99ff02-c081-4b1c-bca2-2e276d75de63"
 }
