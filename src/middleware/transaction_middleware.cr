@@ -18,15 +18,14 @@ module BankApp
       current_user_id = BankApp::UserService.get_current_user_id(env)
 
       transaction = MemoryState.transactions_by_id[transaction_id]?
+      if !transaction
+        puts "Transaction Not found"
+        Response.error(env, {:server => ["Not Found"]}, 404)
+        return
+      end
 
       # Add this part in case the transactions needs to be filtered by auth user
       if TOGGLE_AUTH_USER_TRANSACTIONS_ONLY
-        if !transaction
-          puts "Transaction Not found"
-          Response.error(env, {:server => ["Not Found"]}, 404)
-          return
-        end
-
         if !has_access?(current_user_id, transaction)
           Response.error(env, {:server => ["Forbidden"]}, 403)
           return
